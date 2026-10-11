@@ -5,3 +5,7 @@ reports/features_video.pkl
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+reports/avances3/cache_*/
+*.db
+*.npz
+oof_*.csv

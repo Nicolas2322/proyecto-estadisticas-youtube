@@ -47,8 +47,27 @@ python src/curvas.py   data/videos-stats.csv data/comments.csv reports
 
 O bien abrir el notebook desde la carpeta `notebooks/`. Semilla fija (42) para reproducibilidad.
 
+## Avances III: iteración del modelo
+
+| Etapa | Base (Avances II) | Modelo final (Avances III) |
+|---|---|---|
+| A · Sentimiento | SVM palabras + caracteres · F1-macro 0,708 | SVM híbrido (texto normalizado + léxico + categoría + GloVe Twitter) con umbrales anidados · **F1-macro 0,757** |
+| B · log10(vistas) | XGBoost · R² 0,787 | Stacking XGB + HGB + RF + Ridge (meta RidgeCV) · **R² 0,793**, intervalos conformales del 90 % |
+| Éxito relativo | Regresión logística · AUC 0,873 | Regresión logística · **AUC 0,879** |
+
+23 iteraciones registradas en MLflow (`reports/avances3/mlflow_runs.csv`), con Optuna (CV anidada), SHAP y pruebas de McNemar y Wilcoxon.
+
+```bash
+pip install -r requirements.txt optuna mlflow shap gensim emoji
+python src/avances3/iter_a.py data/videos-stats.csv data/comments.csv reports/avances3
+python src/avances3/iter_b.py reports/features_video.pkl reports/avances3 data/comments.csv
+python src/avances3/figuras.py reports/avances3
+```
+
+`notebooks/A6_transformer_colab.ipynb`: iteración con RoBERTa-Twitter (requiere GPU en Google Colab).
+
 ## Entregas
 
 - [x] Avances II (semana 8): datos, análisis estadístico, modelos, métricas, ajuste y selección de variables — [`reports/Informe_Avances_II_Gomez_Castaneda.pdf`](reports/Informe_Avances_II_Gomez_Castaneda.pdf)
-- [ ] Avances III (semana 9): algoritmos y modelos de lenguaje preentrenados
+- [x] Avances III (semana 9): iteración y mejora del modelo — [`reports/avances3/Informe_Avances_III_Gomez_Castaneda.pdf`](reports/avances3/Informe_Avances_III_Gomez_Castaneda.pdf)
 - [ ] Entrega final (semana 10): API desplegada en la nube y monitoreo

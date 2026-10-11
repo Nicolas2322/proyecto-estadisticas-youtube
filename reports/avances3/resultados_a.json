@@ -1,0 +1,165 @@
+{
+ "A0 Base Avances II (SVM palabras+caracteres)": {
+  "f1_macro": [
+   0.7079041173053555,
+   0.01058400177324028
+  ],
+  "acc": 0.7819063895473841,
+  "f1_neg": 0.5911309144918311,
+  "f1_neu": 0.6584529676451683,
+  "f1_pos": 0.8741846970446674,
+  "sec": 28.9
+ },
+ "A1 + Preprocesamiento (emojis, negación, alargamientos)": {
+  "f1_macro": [
+   0.7228346399184479,
+   0.010600303549712302
+  ],
+  "acc": 0.7974530018192845,
+  "f1_neg": 0.6026420633256447,
+  "f1_neu": 0.6781697062356667,
+  "f1_pos": 0.8878847530422334,
+  "sec": 30.8
+ },
+ "A2 + Híbrido léxico y contexto (VADER, TextBlob, categoría)": {
+  "f1_macro": [
+   0.7450438366334656,
+   0.008491688941416373
+  ],
+  "acc": 0.8120624069684106,
+  "f1_neg": 0.6483042137718397,
+  "f1_neu": 0.6909536541889483,
+  "f1_pos": 0.8960199670187636,
+  "sec": 128.7
+ },
+ "A3a GloVe Twitter solo (regresión logística)": {
+  "f1_macro": [
+   0.6501401253029793,
+   0.005711972937951535
+  ],
+  "acc": 0.71029273940129,
+  "f1_neg": 0.5491905354919053,
+  "f1_neu": 0.5843060959792478,
+  "f1_pos": 0.8171051354237453,
+  "sec": 4.2
+ },
+ "A3b + Embeddings GloVe Twitter (híbrido)": {
+  "f1_macro": [
+   0.7548631120631144,
+   0.006743622502285078
+  ],
+  "acc": 0.8187331164893323,
+  "f1_neg": 0.6643612693246542,
+  "f1_neu": 0.7004125320548557,
+  "f1_pos": 0.900013397043719,
+  "sec": 164.5
+ },
+ "A4 + Ajuste anidado de umbrales por clase": {
+  "f1_macro": [
+   0.7566612697507692,
+   0.007894376109713757
+  ],
+  "acc": 0.8198357131043608,
+  "f1_neg": 0.6636174636174637,
+  "f1_neu": 0.7064980375054514,
+  "f1_pos": 0.9001614639397201,
+  "sec": 450.2,
+  "base": "A3b + Embeddings GloVe Twitter (híbrido)",
+  "sesgos_por_fold": [
+   [
+    -0.05,
+    -0.05,
+    0.0
+   ],
+   [
+    0.0,
+    0.05,
+    0.0
+   ],
+   [
+    -0.05,
+    0.0,
+    0.0
+   ],
+   [
+    0.15,
+    0.15,
+    0.0
+   ],
+   [
+    -0.1,
+    0.1,
+    0.0
+   ]
+  ]
+ },
+ "A5 Stacking (SVM híbrido + LR + NB + GloVe + léxico)": {
+  "f1_macro": [
+   0.7475296605898406,
+   0.00900120652758038
+  ],
+  "acc": 0.8046198798169689,
+  "f1_neg": 0.6546163388268651,
+  "f1_neu": 0.6955686065136145,
+  "f1_pos": 0.8924306535025858,
+  "sec": 536.3
+ },
+ "_final": "A4 + Ajuste anidado de umbrales por clase",
+ "_comparacion": {
+  "final": "A4 + Ajuste anidado de umbrales por clase",
+  "mejora_f1": 0.048757152445413676,
+  "mcnemar": {
+   "final_acierta_base_falla": 1558,
+   "base_acierta_final_falla": 870,
+   "chi2": 194.38591433278418,
+   "p": 3.507813795228573e-44
+  },
+  "bootstrap_ic95": [
+   0.04120631502121688,
+   0.05667215542857643
+  ]
+ },
+ "_cm_final": [
+  [
+   0.686,
+   0.202,
+   0.112
+  ],
+  [
+   0.124,
+   0.706,
+   0.17
+  ],
+  [
+   0.028,
+   0.078,
+   0.894
+  ]
+ ],
+ "_cm_base": [
+  [
+   0.598,
+   0.224,
+   0.178
+  ],
+  [
+   0.139,
+   0.669,
+   0.192
+  ],
+  [
+   0.032,
+   0.102,
+   0.866
+  ]
+ ],
+ "_glove_cobertura": 0.919201546791614,
+ "_ejemplos_error": [
+  "How does every person WIRED brings on this show act like they've been in front of cameras 5,000 times?",
+  "Whenever we get people young enough to actually understand the internet, these giant tech companies might be broken up but as long as we hav",
+  "I was totally shocked that Fusion power generation wasn't included - possibly as big a leap as quantum computing in its impact on humanity.",
+  "Imagine losing the cursor on that screen and trying to find it 💀",
+  "You missed a feature on the airbolt. Instead of using the big part of the loop to lock your zippers, lock the zippers on the loop where the ",
+  "The price of the road-going Kawasaki really tells how overpriced the push bikes are."
+ ]
+}
