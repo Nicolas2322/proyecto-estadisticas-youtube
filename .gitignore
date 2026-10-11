@@ -1,0 +1,7 @@
+data/*.csv
+data/*.zip
+cache/
+reports/features_video.pkl
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

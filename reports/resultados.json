@@ -1,0 +1,1241 @@
+{
+ "raw": {
+  "videos": 1881,
+  "comments": 18409,
+  "v_null": {
+   "Title": 0,
+   "Video ID": 0,
+   "Published At": 0,
+   "Keyword": 0,
+   "Likes": 2,
+   "Comments": 2,
+   "Views": 2
+  },
+  "c_null": {
+   "Video ID": 0,
+   "Comment": 1,
+   "Likes": 0,
+   "Sentiment": 0
+  },
+  "v_dup": 12,
+  "c_dup": 249
+ },
+ "hidden_counts": {
+  "likes": 6,
+  "comments": 2
+ },
+ "clean": {
+  "videos": 1867,
+  "comments": 18139,
+  "keywords": 41,
+  "comments_per_video": {
+   "count": 1867.0,
+   "mean": 9.72,
+   "std": 1.18,
+   "min": 1.0,
+   "25%": 10.0,
+   "50%": 10.0,
+   "75%": 10.0,
+   "max": 11.0
+  },
+  "date_min": "2007-07-16",
+  "date_max": "2022-08-24"
+ },
+ "desc_videos": {
+  "Views": {
+   "count": 1867.0,
+   "mean": 11653890.0375,
+   "std": 108789080.7255,
+   "min": 25.0,
+   "25%": 85121.5,
+   "50%": 589907.0,
+   "75%": 2804977.5,
+   "95%": 34272954.6,
+   "max": 4034122271.0
+  },
+  "Likes": {
+   "count": 1861.0,
+   "mean": 169674.1677,
+   "std": 797226.9972,
+   "min": 0.0,
+   "25%": 2707.0,
+   "50%": 14899.0,
+   "75%": 60991.0,
+   "95%": 626889.0,
+   "max": 16445558.0
+  },
+  "Comments": {
+   "count": 1865.0,
+   "mean": 7834.645,
+   "std": 37938.919,
+   "min": 0.0,
+   "25%": 202.0,
+   "50%": 820.0,
+   "75%": 3380.0,
+   "95%": 26285.8,
+   "max": 732818.0
+  },
+  "engagement": {
+   "count": 1859.0,
+   "mean": 0.0373,
+   "std": 0.0286,
+   "min": 0.0002,
+   "25%": 0.0176,
+   "50%": 0.0304,
+   "75%": 0.0486,
+   "95%": 0.0944,
+   "max": 0.2633
+  },
+  "age_days": {
+   "count": 1867.0,
+   "mean": 447.669,
+   "std": 815.7202,
+   "min": 1.0,
+   "25%": 2.0,
+   "50%": 72.0,
+   "75%": 559.5,
+   "95%": 2117.1,
+   "max": 5518.0
+  }
+ },
+ "skew": {
+  "Views": 29.4613044424197,
+  "Likes": 11.595952564881626,
+  "Comments": 12.485104341926528
+ },
+ "skew_log": {
+  "Views": 0.050052631102555235,
+  "Likes": -0.04993348245523078,
+  "Comments": -0.01003290148430029
+ },
+ "normaltest_logviews": {
+  "stat": 1.144339343684368,
+  "p": 0.5642997642156791
+ },
+ "spearman": {
+  "Views": {
+   "Views": 1.0,
+   "Likes": 0.949,
+   "Comments": 0.839,
+   "age_days": 0.634,
+   "engagement": -0.429
+  },
+  "Likes": {
+   "Views": 0.949,
+   "Likes": 1.0,
+   "Comments": 0.872,
+   "age_days": 0.572,
+   "engagement": -0.161
+  },
+  "Comments": {
+   "Views": 0.839,
+   "Likes": 0.872,
+   "Comments": 1.0,
+   "age_days": 0.439,
+   "engagement": -0.107
+  },
+  "age_days": {
+   "Views": 0.634,
+   "Likes": 0.572,
+   "Comments": 0.439,
+   "age_days": 1.0,
+   "engagement": -0.42
+  },
+  "engagement": {
+   "Views": -0.429,
+   "Likes": -0.161,
+   "Comments": -0.107,
+   "age_days": -0.42,
+   "engagement": 1.0
+  }
+ },
+ "kruskal_views_keyword": {
+  "H": 591.9184487479521,
+  "p": 2.30973630046429e-99,
+  "epsilon2": 0.30225544838332535,
+  "k": 41
+ },
+ "kruskal_eng_keyword": {
+  "H": 668.8816896585265,
+  "p": 4.5339621173609095e-115,
+  "epsilon2": 0.34440399214596196
+ },
+ "loglog_likes_views": {
+  "beta": 0.8813685582479789,
+  "ci": [
+   0.8679256335574113,
+   0.8948114829385465
+  ],
+  "r2": 0.8989313517143035
+ },
+ "loglog_comments_views": {
+  "beta": 0.719274491122527,
+  "ci": [
+   0.6984828267209584,
+   0.7400661555240955
+  ],
+  "r2": 0.7118919164153227
+ },
+ "sent_dist": {
+  "0": 2328,
+  "1": 4590,
+  "2": 11221
+ },
+ "chi2_keyword_sentiment": {
+  "chi2": 2394.7775300237918,
+  "p": 0.0,
+  "dof": 80,
+  "cramers_v": 0.2569276940284117
+ },
+ "top_neg_keywords": {
+  "cnn": 0.553,
+  "news": 0.401,
+  "trolling": 0.274,
+  "history": 0.27,
+  "education": 0.252
+ },
+ "low_neg_keywords": {
+  "minecraft": 0.038,
+  "machine learning": 0.033,
+  "asmr": 0.031,
+  "music": 0.026,
+  "lofi": 0.024
+ },
+ "kruskal_commentlikes_sent": {
+  "H": 207.43313362416802,
+  "p": 9.046224294609547e-46,
+  "medians": {
+   "0": 65.0,
+   "1": 26.0,
+   "2": 26.0
+  }
+ },
+ "len_by_sent": {
+  "0": 25.0,
+  "1": 19.0,
+  "2": 22.0
+ },
+ "gini_comment_likes_median": 0.6147540983606558,
+ "videos_modelables": 1867,
+ "partial_corr_logviews": {
+  "pos_share": {
+   "rho": 0.04797137757834256,
+   "p": 0.038210408096021095
+  },
+  "neg_share": {
+   "rho": 0.034976909820537916,
+   "p": 0.1308495541058991
+  },
+  "vader_mean": {
+   "rho": -0.007614857283016076,
+   "p": 0.7422968724074974
+  },
+  "clikes_log_mean": {
+   "rho": 0.4393924977976232,
+   "p": 5.614208891807211e-89
+  },
+  "clikes_log_max": {
+   "rho": 0.588820858682605,
+   "p": 1.209134236947842e-174
+  },
+  "len_mean": {
+   "rho": 0.057957056415755576,
+   "p": 0.012256121991472364
+  }
+ },
+ "stageA": {
+  "Dummy (clase mayoritaria)": {
+   "accuracy": [
+    0.6186118353437058,
+    0.00011423008854280366
+   ],
+   "f1_macro": [
+    0.2547910980901507,
+    2.906589871979832e-05
+   ],
+   "f1_weighted": [
+    0.47285037641695943,
+    0.0001412624810189092
+   ],
+   "sec": 2.0
+  },
+  "Multinomial NB": {
+   "accuracy": [
+    0.6814047011738799,
+    0.0019684539736253004
+   ],
+   "f1_macro": [
+    0.4600277131360868,
+    0.005411311568260775
+   ],
+   "f1_weighted": [
+    0.6170787832073253,
+    0.003215947872905243
+   ],
+   "sec": 4.8
+  },
+  "Complement NB": {
+   "accuracy": [
+    0.7371958261100062,
+    0.0050564835618557725
+   ],
+   "f1_macro": [
+    0.6238879280327823,
+    0.007997409069551728
+   ],
+   "f1_weighted": [
+    0.7219841727422003,
+    0.005692095542899019
+   ],
+   "sec": 5.1
+  },
+  "Regresión logística": {
+   "accuracy": [
+    0.7618387786809027,
+    0.005126046707509372
+   ],
+   "f1_macro": [
+    0.68475401802665,
+    0.007949058076769495
+   ],
+   "f1_weighted": [
+    0.7654617917459661,
+    0.0048668035613589075
+   ],
+   "sec": 20.8
+  },
+  "SVM lineal": {
+   "accuracy": [
+    0.7711005660413492,
+    0.004804012023996328
+   ],
+   "f1_macro": [
+    0.6866293156412874,
+    0.009138572074453882
+   ],
+   "f1_weighted": [
+    0.7696508798692381,
+    0.004871068825076968
+   ],
+   "sec": 6.0
+  },
+  "SVM lineal (word+char)": {
+   "accuracy": [
+    0.7841659348345695,
+    0.008073295946886617
+   ],
+   "f1_macro": [
+    0.7097244077198533,
+    0.011930580511607808
+   ],
+   "f1_weighted": [
+    0.7845252914416532,
+    0.007981824968430537
+   ],
+   "sec": 31.3
+  },
+  "Random Forest": {
+   "accuracy": [
+    0.6999281391037269,
+    0.002546600986150553
+   ],
+   "f1_macro": [
+    0.4781332515682012,
+    0.006062657093657112
+   ],
+   "f1_weighted": [
+    0.6450999210866634,
+    0.0038759009439721546
+   ],
+   "sec": 154.8
+  },
+  "VADER (léxico)": {
+   "accuracy": [
+    0.7145377363691493,
+    0.0
+   ],
+   "f1_macro": [
+    0.5956564605709652,
+    0.0
+   ],
+   "f1_weighted": [
+    0.6941083846502375,
+    0.0
+   ],
+   "sec": 0
+  },
+  "TextBlob (léxico)": {
+   "accuracy": [
+    0.6713710788907878,
+    0.0
+   ],
+   "f1_macro": [
+    0.5571746281574749,
+    0.0
+   ],
+   "f1_weighted": [
+    0.6657662801182765,
+    0.0
+   ],
+   "sec": 0
+  }
+ },
+ "bestA": "SVM lineal (word+char)",
+ "bestA_report": {
+  "Negativo": {
+   "precision": 0.5855855855855856,
+   "recall": 0.5579399141630901,
+   "f1-score": 0.5714285714285714,
+   "support": 466.0
+  },
+  "Neutral": {
+   "precision": 0.6359875904860393,
+   "recall": 0.6699346405228758,
+   "f1-score": 0.6525198938992043,
+   "support": 918.0
+  },
+  "Positivo": {
+   "precision": 0.8800180423996391,
+   "recall": 0.8694295900178253,
+   "f1-score": 0.8746917731450348,
+   "support": 2244.0
+  },
+  "accuracy": 0.778941565600882,
+  "macro avg": {
+   "precision": 0.7005304061570881,
+   "recall": 0.6991013815679304,
+   "f1-score": 0.6995467461576035,
+   "support": 3628.0
+  },
+  "weighted avg": {
+   "precision": 0.780452033653213,
+   "recall": 0.778941565600882,
+   "f1-score": 0.7795224134020512,
+   "support": 3628.0
+  }
+ },
+ "mcnemar_bestA_vs_vader": {
+  "b": 593,
+  "c": 350,
+  "chi2": 62.103923647932135,
+  "p": 3.2580161668171166e-15
+ },
+ "top_terms": {
+  "Negativo": [
+   "worst",
+   "hate",
+   "ridiculous",
+   "don",
+   "people",
+   "wrong",
+   "sad",
+   "shit",
+   "bad",
+   "terrible",
+   "trump",
+   "poor"
+  ],
+  "Neutral": [
+   "00",
+   "so that",
+   "hulk",
+   "did you",
+   "meant",
+   "is it",
+   "link",
+   "basically",
+   "different",
+   "it more",
+   "watch this",
+   "maybe"
+  ],
+  "Positivo": [
+   "love",
+   "great",
+   "amazing",
+   "good",
+   "thanks",
+   "thank",
+   "awesome",
+   "thank you",
+   "best",
+   "cool",
+   "excited",
+   "nice"
+  ]
+ },
+ "stageB_reg": {
+  "Baseline (media) | Solo metadatos (categoría + antigüedad)": {
+   "model": "Baseline (media)",
+   "fs": "Solo metadatos (categoría + antigüedad)",
+   "r2": [
+    -0.0011805675243563574,
+    0.0012940004609013928
+   ],
+   "mae": [
+    0.8701826082977085,
+    0.021569597247886055
+   ],
+   "rmse": [
+    1.0793222541573655,
+    0.0287717896143672
+   ]
+  },
+  "Ridge | Solo metadatos (categoría + antigüedad)": {
+   "model": "Ridge",
+   "fs": "Solo metadatos (categoría + antigüedad)",
+   "r2": [
+    0.6241942116547989,
+    0.02683081157765323
+   ],
+   "mae": [
+    0.4874175632649319,
+    0.013767779755038036
+   ],
+   "rmse": [
+    0.660809219036374,
+    0.02956675821502544
+   ]
+  },
+  "Random Forest | Solo metadatos (categoría + antigüedad)": {
+   "model": "Random Forest",
+   "fs": "Solo metadatos (categoría + antigüedad)",
+   "r2": [
+    0.617104657634482,
+    0.02062599673995068
+   ],
+   "mae": [
+    0.5025716763495467,
+    0.019341646947819664
+   ],
+   "rmse": [
+    0.6673165402049245,
+    0.027576888894631665
+   ]
+  },
+  "HistGradientBoosting | Solo metadatos (categoría + antigüedad)": {
+   "model": "HistGradientBoosting",
+   "fs": "Solo metadatos (categoría + antigüedad)",
+   "r2": [
+    0.6268034872036324,
+    0.02481891034201247
+   ],
+   "mae": [
+    0.49322143446922473,
+    0.01869564247495587
+   ],
+   "rmse": [
+    0.6588013153322478,
+    0.032506918376341426
+   ]
+  },
+  "XGBoost | Solo metadatos (categoría + antigüedad)": {
+   "model": "XGBoost",
+   "fs": "Solo metadatos (categoría + antigüedad)",
+   "r2": [
+    0.6536091151344097,
+    0.01292744581105278
+   ],
+   "mae": [
+    0.47585132422358634,
+    0.017079657859287143
+   ],
+   "rmse": [
+    0.6347701347144176,
+    0.021540989299378154
+   ]
+  },
+  "Ridge | Solo NLP de comentarios": {
+   "model": "Ridge",
+   "fs": "Solo NLP de comentarios",
+   "r2": [
+    0.6222000385356001,
+    0.03153607883039837
+   ],
+   "mae": [
+    0.48909499409139057,
+    0.01451613005033763
+   ],
+   "rmse": [
+    0.6623366596888175,
+    0.031782858903324114
+   ]
+  },
+  "Random Forest | Solo NLP de comentarios": {
+   "model": "Random Forest",
+   "fs": "Solo NLP de comentarios",
+   "r2": [
+    0.658546851276063,
+    0.025673634342652723
+   ],
+   "mae": [
+    0.4629664714264649,
+    0.016413083616175203
+   ],
+   "rmse": [
+    0.6297621137399326,
+    0.02681180213144732
+   ]
+  },
+  "HistGradientBoosting | Solo NLP de comentarios": {
+   "model": "HistGradientBoosting",
+   "fs": "Solo NLP de comentarios",
+   "r2": [
+    0.659744395800061,
+    0.018192893221201635
+   ],
+   "mae": [
+    0.46505020325884994,
+    0.01693499630063279
+   ],
+   "rmse": [
+    0.629078473380474,
+    0.026224122835275605
+   ]
+  },
+  "XGBoost | Solo NLP de comentarios": {
+   "model": "XGBoost",
+   "fs": "Solo NLP de comentarios",
+   "r2": [
+    0.6675315477883629,
+    0.025445576640754478
+   ],
+   "mae": [
+    0.4593440930589038,
+    0.018381889624424993
+   ],
+   "rmse": [
+    0.6215986909663807,
+    0.031150976951452893
+   ]
+  },
+  "Ridge | NLP + metadatos (propuesto)": {
+   "model": "Ridge",
+   "fs": "NLP + metadatos (propuesto)",
+   "r2": [
+    0.7593272685483603,
+    0.021494258023900873
+   ],
+   "mae": [
+    0.3706367618721044,
+    0.017580256645584918
+   ],
+   "rmse": [
+    0.5287727615765945,
+    0.0297808507968903
+   ]
+  },
+  "Random Forest | NLP + metadatos (propuesto)": {
+   "model": "Random Forest",
+   "fs": "NLP + metadatos (propuesto)",
+   "r2": [
+    0.7676201958475426,
+    0.011648402817029647
+   ],
+   "mae": [
+    0.3806755567807366,
+    0.0161113876024559
+   ],
+   "rmse": [
+    0.5201030058629765,
+    0.025584651918343467
+   ]
+  },
+  "HistGradientBoosting | NLP + metadatos (propuesto)": {
+   "model": "HistGradientBoosting",
+   "fs": "NLP + metadatos (propuesto)",
+   "r2": [
+    0.7674439160836529,
+    0.01597518814990503
+   ],
+   "mae": [
+    0.37108113991330843,
+    0.013753425395120112
+   ],
+   "rmse": [
+    0.5202918769653362,
+    0.030586505856485712
+   ]
+  },
+  "XGBoost | NLP + metadatos (propuesto)": {
+   "model": "XGBoost",
+   "fs": "NLP + metadatos (propuesto)",
+   "r2": [
+    0.7875065382834847,
+    0.015717032991759416
+   ],
+   "mae": [
+    0.35745571070359144,
+    0.014532477964617879
+   ],
+   "rmse": [
+    0.4972296953731997,
+    0.028896526079539506
+   ]
+  },
+  "Ridge | NLP + metadatos + likes/comentarios (referencia, fuga)": {
+   "model": "Ridge",
+   "fs": "NLP + metadatos + likes/comentarios (referencia, fuga)",
+   "r2": [
+    0.947761120595915,
+    0.006247831189929702
+   ],
+   "mae": [
+    0.1836541549147805,
+    0.007640225224747534
+   ],
+   "rmse": [
+    0.24599508439910167,
+    0.015620457821027304
+   ]
+  },
+  "Random Forest | NLP + metadatos + likes/comentarios (referencia, fuga)": {
+   "model": "Random Forest",
+   "fs": "NLP + metadatos + likes/comentarios (referencia, fuga)",
+   "r2": [
+    0.9302879077434947,
+    0.009006266979678665
+   ],
+   "mae": [
+    0.21182250835001942,
+    0.008918917496791495
+   ],
+   "rmse": [
+    0.2841200787293278,
+    0.01991218190840487
+   ]
+  },
+  "HistGradientBoosting | NLP + metadatos + likes/comentarios (referencia, fuga)": {
+   "model": "HistGradientBoosting",
+   "fs": "NLP + metadatos + likes/comentarios (referencia, fuga)",
+   "r2": [
+    0.9408541426230486,
+    0.01051479854922934
+   ],
+   "mae": [
+    0.19055871856302803,
+    0.009558235829302784
+   ],
+   "rmse": [
+    0.26142302346356006,
+    0.026089140232261693
+   ]
+  },
+  "XGBoost | NLP + metadatos + likes/comentarios (referencia, fuga)": {
+   "model": "XGBoost",
+   "fs": "NLP + metadatos + likes/comentarios (referencia, fuga)",
+   "r2": [
+    0.9437095959144065,
+    0.009465865335667656
+   ],
+   "mae": [
+    0.18629380458118255,
+    0.007363500638745325
+   ],
+   "rmse": [
+    0.2550385331743227,
+    0.02327722940507775
+   ]
+  }
+ },
+ "stageB_cls": {
+  "Baseline (estratificado) | Solo metadatos (categoría + antigüedad)": {
+   "model": "Baseline (estratificado)",
+   "fs": "Solo metadatos (categoría + antigüedad)",
+   "auc": [
+    0.5201091036128785,
+    0.02434744684771416
+   ],
+   "f1": [
+    0.5193318383071703,
+    0.024178401201256684
+   ],
+   "acc": [
+    0.5200957692362834,
+    0.024346868254592254
+   ]
+  },
+  "Regresión logística | Solo metadatos (categoría + antigüedad)": {
+   "model": "Regresión logística",
+   "fs": "Solo metadatos (categoría + antigüedad)",
+   "auc": [
+    0.8003720003462625,
+    0.01159872001629351
+   ],
+   "f1": [
+    0.7205145250379177,
+    0.014773897081305056
+   ],
+   "acc": [
+    0.7203997075310749,
+    0.014968561642144669
+   ]
+  },
+  "Random Forest | Solo metadatos (categoría + antigüedad)": {
+   "model": "Random Forest",
+   "fs": "Solo metadatos (categoría + antigüedad)",
+   "auc": [
+    0.8075343170899109,
+    0.012470960949188311
+   ],
+   "f1": [
+    0.7065147323543923,
+    0.017902036646563882
+   ],
+   "acc": [
+    0.7187925621138048,
+    0.01293434448961728
+   ]
+  },
+  "HistGradientBoosting | Solo metadatos (categoría + antigüedad)": {
+   "model": "HistGradientBoosting",
+   "fs": "Solo metadatos (categoría + antigüedad)",
+   "auc": [
+    0.8085584194352211,
+    0.011262357609538087
+   ],
+   "f1": [
+    0.7165702658789067,
+    0.018532826663044982
+   ],
+   "acc": [
+    0.7246820834109904,
+    0.013038747047504334
+   ]
+  },
+  "XGBoost | Solo metadatos (categoría + antigüedad)": {
+   "model": "XGBoost",
+   "fs": "Solo metadatos (categoría + antigüedad)",
+   "auc": [
+    0.8096607090961928,
+    0.011296303518445334
+   ],
+   "f1": [
+    0.7192732595942412,
+    0.017288255204193904
+   ],
+   "acc": [
+    0.7300468810483004,
+    0.010375439956664192
+   ]
+  },
+  "Regresión logística | Solo NLP de comentarios": {
+   "model": "Regresión logística",
+   "fs": "Solo NLP de comentarios",
+   "auc": [
+    0.793851799637661,
+    0.009199448730314507
+   ],
+   "f1": [
+    0.7122701796140949,
+    0.0154547257356848
+   ],
+   "acc": [
+    0.7145159209186965,
+    0.013798818764069848
+   ]
+  },
+  "Random Forest | Solo NLP de comentarios": {
+   "model": "Random Forest",
+   "fs": "Solo NLP de comentarios",
+   "auc": [
+    0.8131023267605284,
+    0.009395024858270231
+   ],
+   "f1": [
+    0.7287609520064112,
+    0.015094059892030108
+   ],
+   "acc": [
+    0.7407521039124887,
+    0.010291561164644933
+   ]
+  },
+  "HistGradientBoosting | Solo NLP de comentarios": {
+   "model": "HistGradientBoosting",
+   "fs": "Solo NLP de comentarios",
+   "auc": [
+    0.8100221979014017,
+    0.008241733229574236
+   ],
+   "f1": [
+    0.726738850332423,
+    0.01091477700595412
+   ],
+   "acc": [
+    0.7321945205086665,
+    0.009915460744061846
+   ]
+  },
+  "XGBoost | Solo NLP de comentarios": {
+   "model": "XGBoost",
+   "fs": "Solo NLP de comentarios",
+   "auc": [
+    0.8162856851360625,
+    0.005679360281880362
+   ],
+   "f1": [
+    0.7354836136610249,
+    0.011714033325295425
+   ],
+   "acc": [
+    0.7450488165044229,
+    0.009982547054922604
+   ]
+  },
+  "Regresión logística | NLP + metadatos (propuesto)": {
+   "model": "Regresión logística",
+   "fs": "NLP + metadatos (propuesto)",
+   "auc": [
+    0.8625171740031041,
+    0.00106985917589518
+   ],
+   "f1": [
+    0.7700481689444076,
+    0.00658111312284916
+   ],
+   "acc": [
+    0.7712907341830224,
+    0.007307510295762912
+   ]
+  },
+  "Random Forest | NLP + metadatos (propuesto)": {
+   "model": "Random Forest",
+   "fs": "NLP + metadatos (propuesto)",
+   "auc": [
+    0.8375411341334471,
+    0.0077885800640068266
+   ],
+   "f1": [
+    0.7467893811261647,
+    0.026298037851117048
+   ],
+   "acc": [
+    0.7557425699989964,
+    0.021026364078965742
+   ]
+  },
+  "HistGradientBoosting | NLP + metadatos (propuesto)": {
+   "model": "HistGradientBoosting",
+   "fs": "NLP + metadatos (propuesto)",
+   "auc": [
+    0.8534312452466193,
+    0.00519760211295548
+   ],
+   "f1": [
+    0.7576642622763156,
+    0.015887441808801476
+   ],
+   "acc": [
+    0.76753881664779,
+    0.01739660045272978
+   ]
+  },
+  "XGBoost | NLP + metadatos (propuesto)": {
+   "model": "XGBoost",
+   "fs": "NLP + metadatos (propuesto)",
+   "auc": [
+    0.8573077160894595,
+    0.008051390145906473
+   ],
+   "f1": [
+    0.7552462099552987,
+    0.019993771215585328
+   ],
+   "acc": [
+    0.7669882869062808,
+    0.016746195664583068
+   ]
+  },
+  "Regresión logística | NLP + metadatos + likes/comentarios (referencia, fuga)": {
+   "model": "Regresión logística",
+   "fs": "NLP + metadatos + likes/comentarios (referencia, fuga)",
+   "auc": [
+    0.9429270313553086,
+    0.008654302719349508
+   ],
+   "f1": [
+    0.8682346175963197,
+    0.011264188805844257
+   ],
+   "acc": [
+    0.8693007985548593,
+    0.011128619465713406
+   ]
+  },
+  "Random Forest | NLP + metadatos + likes/comentarios (referencia, fuga)": {
+   "model": "Random Forest",
+   "fs": "NLP + metadatos + likes/comentarios (referencia, fuga)",
+   "auc": [
+    0.9039274827332481,
+    0.008465332014761911
+   ],
+   "f1": [
+    0.8087833156179178,
+    0.011072351334100386
+   ],
+   "acc": [
+    0.812530286304139,
+    0.008023104574933007
+   ]
+  },
+  "HistGradientBoosting | NLP + metadatos + likes/comentarios (referencia, fuga)": {
+   "model": "HistGradientBoosting",
+   "fs": "NLP + metadatos + likes/comentarios (referencia, fuga)",
+   "auc": [
+    0.9403422743264883,
+    0.010575479625484196
+   ],
+   "f1": [
+    0.8557139802244427,
+    0.014928616732689593
+   ],
+   "acc": [
+    0.8575160212756806,
+    0.01293335952005971
+   ]
+  },
+  "XGBoost | NLP + metadatos + likes/comentarios (referencia, fuga)": {
+   "model": "XGBoost",
+   "fs": "NLP + metadatos + likes/comentarios (referencia, fuga)",
+   "auc": [
+    0.9389725277782931,
+    0.00984473452190727
+   ],
+   "f1": [
+    0.8515743884402311,
+    0.01640781612338498
+   ],
+   "acc": [
+    0.8537626700692463,
+    0.013439024314974901
+   ]
+  }
+ },
+ "bestB_reg": "XGBoost | NLP + metadatos (propuesto)",
+ "bestB_cls": "Regresión logística | NLP + metadatos (propuesto)",
+ "bestB_holdout": {
+  "r2": 0.8008833604439085,
+  "mae": 0.33808603867469406,
+  "factor": 2.178141244157448,
+  "spearman": 0.8950249888890481
+ },
+ "perm_importance": {
+  "log_age": 0.3734,
+  "clikes_log_max": 0.3463,
+  "Keyword": 0.0613,
+  "clikes_log_mean": 0.036,
+  "topic_2": 0.029,
+  "clikes_gini": 0.0281,
+  "topic_1": 0.0158,
+  "topic_15": 0.0096,
+  "topic_7": 0.0042,
+  "topic_11": 0.0033,
+  "topic_8": 0.0032,
+  "topic_5": 0.0032,
+  "topic_19": 0.003,
+  "topic_6": 0.0029,
+  "topic_14": 0.0029
+ },
+ "mutual_info": {
+  "clikes_log_max": 0.457,
+  "log_age": 0.2852,
+  "clikes_log_mean": 0.2574,
+  "clikes_gini": 0.1112,
+  "topic_12": 0.0759,
+  "topic_11": 0.0754,
+  "topic_2": 0.0754,
+  "topic_4": 0.0739,
+  "topic_14": 0.0611,
+  "topic_19": 0.061,
+  "topic_16": 0.0594,
+  "topic_15": 0.0588,
+  "topic_5": 0.0585,
+  "topic_0": 0.057,
+  "topic_1": 0.052
+ },
+ "ablation": {
+  "Sentimiento (modelo A + VADER + TextBlob)": {
+   "r2_sin": 0.7850146085112896,
+   "delta": 0.002491929772195145
+  },
+  "Interacción con comentarios (likes de comentarios, Gini)": {
+   "r2_sin": 0.6853090163537668,
+   "delta": 0.10219752192971787
+  },
+  "Estilo del texto (longitud, ?, !, emojis, idioma)": {
+   "r2_sin": 0.7873794063771933,
+   "delta": 0.00012713190629143334
+  },
+  "Tópicos TF-IDF/SVD": {
+   "r2_sin": 0.7791183433773288,
+   "delta": 0.008388194906155944
+  },
+  "Categoría (Keyword)": {
+   "r2_sin": 0.7541671423909888,
+   "delta": 0.033339395892495904
+  },
+  "Antigüedad": {
+   "r2_sin": 0.7119592666668685,
+   "delta": 0.07554727161661623
+  }
+ },
+ "_final_num": [
+  "pred_pos_share",
+  "pred_neg_share",
+  "vader_mean",
+  "vader_std",
+  "vader_wmean",
+  "tb_pol",
+  "tb_subj",
+  "clikes_log_mean",
+  "clikes_log_max",
+  "clikes_gini",
+  "topic_0",
+  "topic_1",
+  "topic_2",
+  "topic_3",
+  "topic_4",
+  "topic_5",
+  "topic_6",
+  "topic_7",
+  "topic_8",
+  "topic_9",
+  "topic_10",
+  "topic_11",
+  "topic_12",
+  "topic_13",
+  "topic_14",
+  "topic_15",
+  "topic_16",
+  "topic_17",
+  "topic_18",
+  "topic_19",
+  "log_age"
+ ],
+ "tuning": {
+  "A": {
+   "model": "SVM lineal (word+char)",
+   "grid": {
+    "m__C": [
+     "0.03",
+     "0.05",
+     "0.1",
+     "0.2",
+     "0.3",
+     "0.5",
+     "1.0"
+    ],
+    "f__ch__ngram_range": [
+     "(2, 5)",
+     "(1, 4)"
+    ]
+   },
+   "combos": 14,
+   "best_params": {
+    "f__ch__ngram_range": "(2, 5)",
+    "m__C": "0.1"
+   },
+   "cv_f1_macro": 0.6980698263941904,
+   "holdout_default": 0.6995467461576035,
+   "holdout_tuned": 0.6998803771946808,
+   "holdout_acc_tuned": 0.7756339581036383
+  },
+  "B_reg": {
+   "model": "XGBoost",
+   "combos": 54,
+   "best_params": {
+    "m__learning_rate": "0.06",
+    "m__max_depth": "6",
+    "m__min_child_weight": "1",
+    "m__n_estimators": "1200"
+   },
+   "cv_r2": 0.7673332615861994,
+   "holdout_default": 0.8008833604439085,
+   "holdout_tuned": 0.8000103162649548,
+   "holdout_mae_tuned": 0.3409421151648153,
+   "top5": [
+    {
+     "params": {
+      "m__learning_rate": "0.06",
+      "m__max_depth": "6",
+      "m__min_child_weight": "1",
+      "m__n_estimators": "1200"
+     },
+     "r2": 0.7673332615861994
+    },
+    {
+     "params": {
+      "m__learning_rate": "0.06",
+      "m__max_depth": "6",
+      "m__min_child_weight": "1",
+      "m__n_estimators": "800"
+     },
+     "r2": 0.767330809752531
+    },
+    {
+     "params": {
+      "m__learning_rate": "0.06",
+      "m__max_depth": "6",
+      "m__min_child_weight": "1",
+      "m__n_estimators": "400"
+     },
+     "r2": 0.7669784802570779
+    },
+    {
+     "params": {
+      "m__learning_rate": "0.03",
+      "m__max_depth": "4",
+      "m__min_child_weight": "1",
+      "m__n_estimators": "1200"
+     },
+     "r2": 0.7668017168393204
+    },
+    {
+     "params": {
+      "m__learning_rate": "0.03",
+      "m__max_depth": "4",
+      "m__min_child_weight": "1",
+      "m__n_estimators": "800"
+     },
+     "r2": 0.7667913448214001
+    }
+   ]
+  },
+  "B_cls": {
+   "model": "Regresión logística",
+   "combos": 6,
+   "best_params": {
+    "m__C": "100.0"
+   },
+   "cv_auc": 0.8734586734385392,
+   "holdout_default": 0.8704293211735351,
+   "holdout_tuned": 0.8896440964753792
+  },
+  "final_cv": {
+   "Propuesto (37 variables)": {
+    "n": 37,
+    "r2": [
+     0.7830261872476021,
+     0.01299860816344602
+    ],
+    "mae": 0.36063547763410203
+   },
+   "Final sin estilo (32 variables)": {
+    "n": 32,
+    "r2": [
+     0.7872100191187694,
+     0.018132971746466074
+    ],
+    "mae": 0.3588547081810284
+   }
+  },
+  "likes_target": {
+   "r2": [
+    0.7742734144544589,
+    0.03052171180777756
+   ],
+   "mae": 0.3385844203658048
+  }
+ }
+}
