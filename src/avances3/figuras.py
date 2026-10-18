@@ -22,7 +22,8 @@ final_a = A["_final"]
 col = []
 for k in names:
     if k.startswith("A0"): col.append(C_BASE)
-    elif k == final_a: col.append(C_ADOP)
+    elif k == ("A6b RoBERTa-Twitter ajuste fino" if T else final_a): col.append(C_ADOP)
+    elif k == final_a: col.append("#6fa3c4")
     elif k.startswith(("A3a", "A5", "A6a")): col.append(C_DESC)
     else: col.append("#6fa3c4")
 fig, ax = plt.subplots(1, 2, figsize=(10, 3.6), gridspec_kw=dict(width_ratios=[1.5, 1]))
@@ -30,18 +31,18 @@ yy = np.arange(len(names))[::-1]
 ax[0].barh(yy, vals, xerr=sds, color=col, height=.65)
 for yv, v_, sd_ in zip(yy, vals, sds): ax[0].text(v_ + sd_ + .006, yv, f"{v_:.3f}", va="center", fontsize=8)
 ax[0].set_yticks(yy, [lab[k] if len(lab[k]) < 52 else lab[k][:50] + "…" for k in names], fontsize=7.5)
-ax[0].set_xlim(.55, .85); ax[0].set_xlabel("F1-macro (validación cruzada, 5 folds)"); ax[0].set_title("Trayectoria de iteraciones – etapa A")
+ax[0].set_xlim(.55, .97); ax[0].set_xlabel("F1-macro (validación cruzada, 5 folds)"); ax[0].set_title("Trayectoria de iteraciones – etapa A")
 ax[0].axvline(A[names[0]]["f1_macro"][0], color=C_BASE, lw=.8, ls="--")
 cls = ["Negativo", "Neutral", "Positivo"]; x = np.arange(3); w = .38
 a0 = [A[names[0]][k] for k in ["f1_neg", "f1_neu", "f1_pos"]]; af = [A[final_a][k] for k in ["f1_neg", "f1_neu", "f1_pos"]]
-ax[1].bar(x - w / 2, a0, w, color=C_BASE, label="A0 (Avances II)"); ax[1].bar(x + w / 2, af, w, color=C_ADOP, label=final_a.split()[0] + " (final)")
+ax[1].bar(x - w / 2, a0, w, color=C_BASE, label="A0 (Avances II)"); ax[1].bar(x + w / 2, af, w, color=C_ADOP, label=final_a.split()[0] + " (mejor modelo clásico)")
 for i in range(3): ax[1].text(x[i] + w / 2, af[i] + .01, f"+{af[i]-a0[i]:.3f}", ha="center", fontsize=8)
 ax[1].set_xticks(x, cls); ax[1].set_ylim(0, 1); ax[1].set_ylabel("F1 por clase"); ax[1].legend(frameon=False, fontsize=8, loc="upper left"); ax[1].set_title("Mejora por clase")
 plt.tight_layout(); plt.savefig(OUT / "g1_iter_a.png"); plt.close()
 
 # ---------- Figura: matrices de confusión A0 vs final
 fig, ax = plt.subplots(1, 2, figsize=(7.5, 3))
-for a_, M, t in [(ax[0], np.array(A["_cm_base"]), "A0 – Avances II"), (ax[1], np.array(A["_cm_final"]), f"{final_a.split()[0]} – modelo final")]:
+for a_, M, t in [(ax[0], np.array(A["_cm_base"]), "A0 – Avances II"), (ax[1], np.array(A["_cm_final"]), f"{final_a.split()[0]} – mejor modelo clásico")]:
     a_.imshow(M, cmap="Blues", vmin=0, vmax=1)
     for i in range(3):
         for j in range(3): a_.text(j, i, f"{M[i, j]:.2f}", ha="center", va="center", color="white" if M[i, j] > .5 else "black")

@@ -102,7 +102,7 @@ def evaluar(name, model):
 RES, OOF, SC = {}, {}, {}
 def registrar(name, oof, fold_f1, sec, extra=None):
     rep = classification_report(y, oof, output_dict=True)
-    RES[name] = dict(f1_macro=[float(np.mean(fold_f1)), float(np.std(fold_f1))], acc=float(accuracy_score(y, oof)),
+    RES[name] = dict(f1_macro=[float(np.mean(fold_f1)), float(np.std(fold_f1))], folds=[float(x) for x in fold_f1], acc=float(accuracy_score(y, oof)),
                      f1_neg=rep["0"]["f1-score"], f1_neu=rep["1"]["f1-score"], f1_pos=rep["2"]["f1-score"], sec=round(sec, 1), **(extra or {}))
     with mlflow.start_run(run_name=name):
         mlflow.log_param("iteracion", name.split()[0])

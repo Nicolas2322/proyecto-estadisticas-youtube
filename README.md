@@ -51,13 +51,13 @@ O bien abrir el notebook desde la carpeta `notebooks/`. Semilla fija (42) para r
 
 | Etapa | Base (Avances II) | Modelo final (Avances III) |
 |---|---|---|
-| A · Sentimiento | SVM palabras + caracteres · F1-macro 0,708 | SVM híbrido (texto normalizado + léxico + categoría + GloVe Twitter) con umbrales anidados · **F1-macro 0,757** |
+| A · Sentimiento | SVM palabras + caracteres · F1-macro 0,708 | RoBERTa-Twitter con ajuste fino · **F1-macro 0,900** (alternativa en CPU: SVM híbrido con GloVe y umbrales anidados · 0,757) |
 | B · log10(vistas) | XGBoost · R² 0,787 | Stacking XGB + HGB + RF + Ridge (meta RidgeCV) · **R² 0,793**, intervalos conformales del 90 % |
 | Éxito relativo | Regresión logística · AUC 0,873 | Regresión logística · **AUC 0,879** |
 
 Limpieza documentada en `reports/avances3/registro_limpieza/` (conteos antes/después, huellas SHA-256 y respaldo de los registros retirados para poder revertir cada paso).
 
-23 iteraciones registradas en MLflow (`reports/avances3/mlflow_runs.csv`), con Optuna (CV anidada), SHAP y pruebas de McNemar y Wilcoxon.
+25 iteraciones registradas en MLflow (`reports/avances3/mlflow_runs.csv`), con Optuna (CV anidada), SHAP y pruebas de McNemar y Wilcoxon.
 
 ```bash
 pip install -r requirements.txt optuna mlflow shap gensim emoji
