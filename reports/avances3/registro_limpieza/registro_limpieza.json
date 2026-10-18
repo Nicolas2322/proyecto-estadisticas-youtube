@@ -1,0 +1,157 @@
+{
+ "fuentes": {
+  "videos-stats.csv": "09b52f4ac493ffb7a07e64eca489c31afd43cc540398bf626988eaa3cebf930a",
+  "comments.csv": "bc78f5fbddcf57cfcde8609ce35a23658c2eb98fca05d1ffe62fff65a20f651b"
+ },
+ "pasos": [
+  {
+   "tabla": "videos",
+   "paso": "Tipos y estandarización",
+   "antes": 1881,
+   "despues": 1881,
+   "cambio": 0,
+   "accion": "Conversión de fecha a datetime y de contadores a numérico; categorías en minúscula sin espacios",
+   "criterio": "0 fechas no convertibles; 0 categorías modificadas; 41 categorías únicas",
+   "respaldo": null
+  },
+  {
+   "tabla": "videos",
+   "paso": "Duplicados del mismo video",
+   "antes": 1881,
+   "despues": 1869,
+   "cambio": -12,
+   "accion": "Se conserva la primera aparición y se respalda el resto",
+   "criterio": "24 filas comparten identificador (12 videos) y ninguna es duplicado exacto (0): en 3 solo cambia la palabra clave de búsqueda; en 6 los contadores difieren menos del 5 % (el mismo video capturado en momentos distintos); en 3 las vistas difieren de forma importante",
+   "respaldo": "retirados_videos_duplicados.csv",
+   "solo_categoria": 3,
+   "diferencia_menor": 6,
+   "conflicto": [
+    "2FYvHn12pOQ",
+    "5q87K1WaoFI",
+    "7eh4d6sabA0"
+   ]
+  },
+  {
+   "tabla": "videos",
+   "paso": "Contadores ocultos (valor −1)",
+   "antes": 1869,
+   "despues": 1869,
+   "cambio": 0,
+   "accion": "Se recategorizan como faltantes (NaN, «contador oculto») y se imputan con la mediana en el modelado; no se eliminan",
+   "criterio": "likes ocultos: 6; comentarios ocultos: 2. El valor −1 es la convención de YouTube para un contador deshabilitado, no un cero",
+   "respaldo": null
+  },
+  {
+   "tabla": "videos",
+   "paso": "Variable objetivo faltante",
+   "antes": 1869,
+   "despues": 1867,
+   "cambio": -2,
+   "accion": "Se retiran del modelado y se respaldan",
+   "criterio": "2 videos sin vistas: sin el valor a predecir no pueden usarse para entrenar ni evaluar",
+   "respaldo": "retirados_videos_sin_vistas.csv",
+   "detalle": [
+    {
+     "Video ID": "f_uwKZIAeM0",
+     "Title": "What is Machine Learning?"
+    },
+    {
+     "Video ID": "cyLWtMSry58",
+     "Title": "Don&#39;t learn machine learning"
+    }
+   ]
+  },
+  {
+   "tabla": "comentarios",
+   "paso": "Comentario o etiqueta faltante",
+   "antes": 18409,
+   "despues": 18408,
+   "cambio": -1,
+   "accion": "Se retiran y se respaldan",
+   "criterio": "1 filas sin texto: un comentario vacío no aporta información al análisis de sentimiento",
+   "respaldo": "retirados_comentarios_sin_texto.csv"
+  },
+  {
+   "tabla": "comentarios",
+   "paso": "Comentarios duplicados en el mismo video",
+   "antes": 18408,
+   "despues": 18159,
+   "cambio": -249,
+   "accion": "Se conserva la primera aparición y se respalda el resto",
+   "criterio": "249 repeticiones; 148 son copias exactas (texto, likes y etiqueta). En 93 grupos los likes difieren y en 0 difiere la etiqueta: son el mismo comentario capturado en momentos distintos, no comentarios diferentes",
+   "respaldo": "retirados_comentarios_duplicados.csv"
+  },
+  {
+   "tabla": "comentarios",
+   "paso": "Comentarios de videos retirados",
+   "antes": 18159,
+   "despues": 18139,
+   "cambio": -20,
+   "accion": "Se retiran y se respaldan",
+   "criterio": "20 comentarios pertenecen a videos sin variable objetivo",
+   "respaldo": "retirados_comentarios_sin_video.csv"
+  },
+  {
+   "tabla": "comentarios",
+   "paso": "Validación de etiquetas",
+   "antes": 18139,
+   "despues": 18139,
+   "cambio": 0,
+   "accion": "Verificación del dominio de la etiqueta",
+   "criterio": "valores presentes: [0.0, 1.0, 2.0] (0 negativo, 1 neutral, 2 positivo)",
+   "respaldo": null
+  }
+ ],
+ "perfil": {
+  "videos": {
+   "filas": 1881,
+   "tipos": {
+    "Title": "str",
+    "Video ID": "str",
+    "Published At": "str",
+    "Keyword": "str",
+    "Likes": "float64",
+    "Comments": "float64",
+    "Views": "float64"
+   },
+   "faltantes": {
+    "Title": 0,
+    "Video ID": 0,
+    "Published At": 0,
+    "Keyword": 0,
+    "Likes": 2,
+    "Comments": 2,
+    "Views": 2
+   }
+  },
+  "comentarios": {
+   "filas": 18409,
+   "tipos": {
+    "Video ID": "str",
+    "Comment": "str",
+    "Likes": "float64",
+    "Sentiment": "float64"
+   },
+   "faltantes": {
+    "Video ID": 0,
+    "Comment": 1,
+    "Likes": 0,
+    "Sentiment": 0
+   }
+  }
+ },
+ "final": {
+  "videos": 1867,
+  "comentarios": 18139,
+  "comentarios_por_video_mediana": 10.0,
+  "faltantes_videos": {
+   "Title": 0,
+   "Video ID": 0,
+   "Published At": 0,
+   "Keyword": 0,
+   "Likes": 6,
+   "Comments": 2,
+   "Views": 0
+  }
+ }
+}

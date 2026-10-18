@@ -55,10 +55,13 @@ O bien abrir el notebook desde la carpeta `notebooks/`. Semilla fija (42) para r
 | B · log10(vistas) | XGBoost · R² 0,787 | Stacking XGB + HGB + RF + Ridge (meta RidgeCV) · **R² 0,793**, intervalos conformales del 90 % |
 | Éxito relativo | Regresión logística · AUC 0,873 | Regresión logística · **AUC 0,879** |
 
+Limpieza documentada en `reports/avances3/registro_limpieza/` (conteos antes/después, huellas SHA-256 y respaldo de los registros retirados para poder revertir cada paso).
+
 23 iteraciones registradas en MLflow (`reports/avances3/mlflow_runs.csv`), con Optuna (CV anidada), SHAP y pruebas de McNemar y Wilcoxon.
 
 ```bash
 pip install -r requirements.txt optuna mlflow shap gensim emoji
+python src/avances3/registro_limpieza.py data/videos-stats.csv data/comments.csv reports/avances3/registro_limpieza
 python src/avances3/iter_a.py data/videos-stats.csv data/comments.csv reports/avances3
 python src/avances3/iter_b.py reports/features_video.pkl reports/avances3 data/comments.csv
 python src/avances3/figuras.py reports/avances3
