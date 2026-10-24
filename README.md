@@ -69,8 +69,24 @@ python src/avances3/figuras.py reports/avances3
 
 `notebooks/A6_transformer_colab.ipynb`: iteración con RoBERTa-Twitter (requiere GPU en Google Colab).
 
+## Avances IV: solución final
+
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Nicolas2322/proyecto-estadisticas-youtube/blob/main/notebooks/Avances_IV_proyecto_final.ipynb)
+
+`notebooks/Avances_IV_proyecto_final.ipynb` ejecuta todo en Google Colab (GPU T4, ~35 min): registro de limpieza, RoBERTa-Twitter ajustado (5 folds + modelo final), stacking con intervalos conformales y una interfaz Gradio con enlace público (también consumible como API).
+
+| Indicador | Diseño inicial (Avances II) | Solución final |
+|---|---|---|
+| Sentimiento · F1-macro | 0,710 (SVM TF-IDF) | **0,901** (RoBERTa-Twitter ajustado) |
+| Sentimiento · F1 clase negativa | 0,571 | **0,880** |
+| log10(vistas) · R² | 0,788 (XGBoost) | **0,791** (stacking XGB + HGB + RF + Ridge) |
+| Error típico sobre las vistas | ×2,28 | ×2,23 |
+| Intervalo de predicción del 90 % | — | cobertura 0,901 |
+
+Código de la solución en `src/final/final.py` (el mismo módulo construye las variables en la evaluación y en la demo). Resultados en `reports/avances4/`. Datos en `MyDrive/youtube-statistics/` (`videos-stats.csv`, `comments.csv`).
+
 ## Entregas
 
 - [x] Avances II (semana 8): datos, análisis estadístico, modelos, métricas, ajuste y selección de variables — [`reports/Informe_Avances_II_Gomez_Castaneda.pdf`](reports/Informe_Avances_II_Gomez_Castaneda.pdf)
 - [x] Avances III (semana 9): iteración y mejora del modelo — [`reports/avances3/Informe_Avances_III_Gomez_Castaneda.pdf`](reports/avances3/Informe_Avances_III_Gomez_Castaneda.pdf)
-- [ ] Entrega final (semana 10): API desplegada en la nube y monitoreo
+- [x] Avances IV (semana 10): resultados frente al diseño inicial, retos, lecciones aprendidas y modelo consumible — [`reports/avances4/Informe_Avances_IV_Gomez_Castaneda.pdf`](reports/avances4/Informe_Avances_IV_Gomez_Castaneda.pdf)

@@ -1,0 +1,149 @@
+{
+ "etapa_A": {
+  "modelo": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+  "f1_macro": 0.9009532504999772,
+  "f1_sd": 0.007570154499970641,
+  "f1_folds": [
+   0.9084010102804979,
+   0.9043671289751579,
+   0.8967088816817247,
+   0.9071183613368986,
+   0.8881708702256071
+  ],
+  "exactitud": 0.9273940129003804,
+  "reporte": {
+   "0": {
+    "precision": 0.8409714061887975,
+    "recall": 0.9222508591065293,
+    "f1-score": 0.8797377586560131,
+    "support": 2328.0
+   },
+   "1": {
+    "precision": 0.8950106408134311,
+    "recall": 0.8246187363834423,
+    "f1-score": 0.8583739653021885,
+    "support": 4590.0
+   },
+   "2": {
+    "precision": 0.9588799859117725,
+    "recall": 0.9705017378130292,
+    "f1-score": 0.9646558596864204,
+    "support": 11221.0
+   },
+   "accuracy": 0.9273940129003804,
+   "macro avg": {
+    "precision": 0.898287344304667,
+    "recall": 0.9057904444343335,
+    "f1-score": 0.9009225278815407,
+    "support": 18139.0
+   },
+   "weighted avg": {
+    "precision": 0.927585456577384,
+    "recall": 0.9273940129003804,
+    "f1-score": 0.926863079796547,
+    "support": 18139.0
+   }
+  },
+  "matriz": [
+   [
+    0.922,
+    0.064,
+    0.014
+   ],
+   [
+    0.081,
+    0.825,
+    0.095
+   ],
+   [
+    0.003,
+    0.026,
+    0.971
+   ]
+  ]
+ },
+ "etapa_B": {
+  "con_sentimiento_roberta": {
+   "r2": 0.7912230162471354,
+   "r2_sd": 0.017026837324620375,
+   "r2_folds": [
+    0.8078470602182362,
+    0.7942094085934847,
+    0.7876840939831599,
+    0.8057993999463449,
+    0.7605751184944516
+   ],
+   "mae": 0.34868133630607023,
+   "factor": 2.231933939724854,
+   "cobertura": 0.9014394058866539,
+   "ancho_log10": 1.4956691831212143
+  },
+  "sin_variables_de_sentimiento": {
+   "r2": 0.7927180916800468,
+   "r2_sd": 0.01997866718839259,
+   "r2_folds": [
+    0.8081302842117736,
+    0.8022585769073238,
+    0.7938497318164937,
+    0.8054218328591577,
+    0.7539300326054861
+   ],
+   "mae": 0.3469006634421738,
+   "factor": 2.222801409184661,
+   "cobertura": 0.8998308267981822,
+   "ancho_log10": 1.4817863748611275
+  }
+ },
+ "comparacion": [
+  {
+   "Indicador": "Etapa A \u00b7 sentimiento (F1-macro)",
+   "Dise\u00f1o inicial": "SVM lineal TF-IDF",
+   "Valor inicial": 0.7097244077198533,
+   "Soluci\u00f3n final": "RoBERTa-Twitter ajustado",
+   "Valor final": 0.9009532504999772,
+   "Cambio": 0.19122884278012386
+  },
+  {
+   "Indicador": "Etapa A \u00b7 exactitud",
+   "Dise\u00f1o inicial": "SVM lineal TF-IDF",
+   "Valor inicial": 0.7841659348345695,
+   "Soluci\u00f3n final": "RoBERTa-Twitter ajustado",
+   "Valor final": 0.9273940129003804,
+   "Cambio": 0.14322807806581084
+  },
+  {
+   "Indicador": "Etapa A \u00b7 F1 clase negativa",
+   "Dise\u00f1o inicial": "SVM lineal TF-IDF",
+   "Valor inicial": 0.5714285714285714,
+   "Soluci\u00f3n final": "RoBERTa-Twitter ajustado",
+   "Valor final": 0.8797377586560131,
+   "Cambio": 0.3083091872274417
+  },
+  {
+   "Indicador": "Etapa B \u00b7 R\u00b2 log10(vistas)",
+   "Dise\u00f1o inicial": "XGBoost",
+   "Valor inicial": 0.7875065382834847,
+   "Soluci\u00f3n final": "Stacking 4 modelos + sentimiento RoBERTa",
+   "Valor final": 0.7912230162471354,
+   "Cambio": 0.0037164779636507106
+  },
+  {
+   "Indicador": "Etapa B \u00b7 MAE log10(vistas)",
+   "Dise\u00f1o inicial": "XGBoost",
+   "Valor inicial": 0.35745571070359144,
+   "Soluci\u00f3n final": "Stacking 4 modelos + sentimiento RoBERTa",
+   "Valor final": 0.34868133630607023,
+   "Cambio": -0.008774374397521212
+  },
+  {
+   "Indicador": "\u00c9xito relativo (ROC-AUC)",
+   "Dise\u00f1o inicial": "Regresi\u00f3n log\u00edstica",
+   "Valor inicial": 0.8625171740031041,
+   "Soluci\u00f3n final": "Regresi\u00f3n log\u00edstica (C = 100)",
+   "Valor final": 0.879353663890383,
+   "Cambio": 0.016836489887278927
+  }
+ ],
+ "fecha": "2026-10-24 14:15",
+ "gpu": "Tesla T4"
+}
