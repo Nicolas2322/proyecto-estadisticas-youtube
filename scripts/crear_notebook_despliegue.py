@@ -16,7 +16,7 @@ Este notebook entrena los modelos finales con todos los datos y los publica en l
 1. **Repositorio de modelos** en Hugging Face Hub: RoBERTa-Twitter ajustado (etapa A) y el *stacking* con su intervalo conformal (etapa B).
 2. **Space de Hugging Face** con la interfaz web (Gradio) y la API, que descarga los modelos del repositorio anterior.
 
-**Requisitos:** entorno con GPU T4; cuenta en Hugging Face con un *token* de escritura (guardado como secreto `HF_TOKEN` en Colab o escrito cuando se pida);
+**Requisitos:** entorno con GPU T4; el Space se crea en **ZeroGPU**, la opción gratuita para Spaces de Gradio; cuenta en Hugging Face con un *token* de escritura (guardado como secreto `HF_TOKEN` en Colab o escrito cuando se pida);
 y en `MyDrive/youtube-statistics/` los archivos `videos-stats.csv`, `comments.csv` y `salida_final/oof_roberta.csv` (predicciones fuera de fold del notebook de Avances IV).
 """)
 md("## 0. Autenticación en Hugging Face")
@@ -147,7 +147,7 @@ shutil.copy("repo/despliegue/space/app.py", "space/app.py")
 shutil.copy("repo/src/final/final.py", "space/final/final.py"); open("space/final/__init__.py", "w").close()
 V = VERSIONES
 open("space/requirements.txt", "w").write("\\n".join([
-    "--extra-index-url https://download.pytorch.org/whl/cpu", f"torch=={V['torch']}", f"transformers=={V['transformers']}",
+    "torch", f"transformers=={V['transformers']}",
     f"scikit-learn=={V['scikit-learn']}", f"xgboost=={V['xgboost']}", f"numpy=={V['numpy']}", f"pandas=={V['pandas']}",
     f"joblib=={V['joblib']}", "vaderSentiment", "textblob", "requests", "huggingface_hub"]) + "\\n")
 open("space/README.md", "w").write(f\"\"\"---
@@ -164,7 +164,8 @@ short_description: Sentimiento de comentarios y vistas estimadas de YouTube
 ---
 Interfaz y API del proyecto final de Procesamiento de Lenguaje Natural. Código: https://github.com/Nicolas2322/proyecto-estadisticas-youtube
 \"\"\")
-api.create_repo(REPO_SPACE, repo_type="space", space_sdk="gradio", exist_ok=True)
+# Las cuentas gratuitas pueden alojar hasta 2 Spaces de Gradio en ZeroGPU (CPU basic requiere PRO desde julio de 2026).
+api.create_repo(REPO_SPACE, repo_type="space", space_sdk="gradio", space_hardware="zero-a10g", exist_ok=True)
 api.add_space_variable(REPO_SPACE, "MODEL_REPO", REPO_MODELO)
 api.upload_folder(folder_path="space", repo_id=REPO_SPACE, repo_type="space", commit_message=f"Servicio v{PAQ['version']}")
 print("Modelo: https://huggingface.co/" + REPO_MODELO); print("Space:  https://huggingface.co/spaces/" + REPO_SPACE)

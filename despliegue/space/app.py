@@ -47,13 +47,37 @@ def normalizar(t):
     return " ".join("@user" if w.startswith("@") and len(w) > 1 else "http" if w.startswith("http") else w for w in str(t).split())
 
 
+try:  # Hugging Face ZeroGPU: la GPU se asigna solo durante la función decorada
+    import spaces
+    GPU = spaces.GPU(duration=30); HAY_ZEROGPU = True
+except ImportError:  # ejecución local o en un servidor sin ZeroGPU
+    GPU = lambda f: f; HAY_ZEROGPU = False
+
+
 @torch.no_grad()
-def clasificar(textos, bs=32):
-    out = []
+def _clasificar(textos, dev, bs=32):
+    MODELO_A.to(dev); out = []
     for i in range(0, len(textos), bs):
-        b = TOK([normalizar(t) for t in textos[i:i + bs]], padding=True, truncation=True, max_length=128, return_tensors="pt")
-        out.append(MODELO_A(**b).logits.argmax(-1).numpy())
+        b = TOK([normalizar(t) for t in textos[i:i + bs]], padding=True, truncation=True, max_length=128, return_tensors="pt").to(dev)
+        out.append(MODELO_A(**b).logits.argmax(-1).cpu().numpy())
     return np.concatenate(out)
+
+
+@GPU
+def _clasificar_gpu(textos):
+    return _clasificar(textos, "cuda" if torch.cuda.is_available() else "cpu")
+
+
+ULTIMO_DISPOSITIVO = {"valor": "cpu"}
+
+
+def clasificar(textos):
+    """Usa la GPU compartida cuando hay cuota disponible; si no, la CPU del servicio (mismo modelo, mismo resultado)."""
+    try:
+        r = _clasificar_gpu(list(textos)); ULTIMO_DISPOSITIVO["valor"] = "zerogpu" if HAY_ZEROGPU else "cpu"; return r
+    except Exception as e:  # cuota de ZeroGPU agotada o GPU no disponible
+        print(json.dumps({"evento": "respaldo_cpu", "motivo": str(e)[:120]}), flush=True)
+        ULTIMO_DISPOSITIVO["valor"] = "cpu"; return _clasificar(list(textos), "cpu")
 
 
 # ---------------------------------------------------------------- monitoreo
@@ -108,7 +132,7 @@ def _predecir(lineas, categoria, dias, origen):
     lat = round(1000 * (time.time() - t0))
     registrar({"fecha": datetime.now(timezone.utc).isoformat(timespec="seconds"), "origen": origen, "categoria": categoria,
                "n_comentarios": len(tabla), "longitud_mediana": float(tabla.Comentario.str.len().median()),
-               "clases": dict(Counter(tabla.Sentimiento)), "vistas": round(r["vistas"]), "latencia_ms": lat, "version": VERSION})
+               "clases": dict(Counter(tabla.Sentimiento)), "vistas": round(r["vistas"]), "latencia_ms": lat, "dispositivo": ULTIMO_DISPOSITIVO["valor"], "version": VERSION})
     return tabla, r, lat
 
 
