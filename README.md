@@ -85,6 +85,10 @@ python src/avances3/figuras.py reports/avances3
 
 Código de la solución en `src/final/final.py` (el mismo módulo construye las variables en la evaluación y en la demo). Resultados en `reports/avances4/`. Datos en `MyDrive/youtube-statistics/` (`videos-stats.csv`, `comments.csv`).
 
+## Propuesta de proyecto final
+
+Documento con la problemática, objetivos, fuente de datos, diseño, pipeline, workflow, modelo seleccionado, desempeño, modelos probados (69 configuraciones) y herramientas: [`reports/propuesta_final/Propuesta_Proyecto_Final_Gomez_Castaneda.pdf`](reports/propuesta_final/Propuesta_Proyecto_Final_Gomez_Castaneda.pdf).
+
 ## Entregas
 
 - [x] Avances II (semana 8): datos, análisis estadístico, modelos, métricas, ajuste y selección de variables — [`reports/Informe_Avances_II_Gomez_Castaneda.pdf`](reports/Informe_Avances_II_Gomez_Castaneda.pdf)
