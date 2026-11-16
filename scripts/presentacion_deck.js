@@ -89,7 +89,7 @@ const chartTexto = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: "+mn-
     { text: "Especialización en Inteligencia Artificial · Universidad de Cundinamarca", options: { breakLine: true } },
     { text: "Docente: Paul Alexander Díaz Montaña · 22 de noviembre de 2026" },
   ], { x: 0.7, y: 5.3, w: 6.5, h: 1.1, fontSize: 15, color: C.background1, paraSpaceAfter: 3 });
-  tx(s, [{ text: "Servicio en la nube", options: { bold: true, breakLine: true, color: C.accent3 } }, { text: SPACE }],
+  tx(s, [{ text: "Servicio en la nube (interfaz y API)", options: { bold: true, breakLine: true, color: C.accent3 } }, { text: "https://" + SPACE, options: { hyperlink: { url: "https://" + SPACE, tooltip: "Abrir el servicio" }, color: C.background1 } }],
     { x: 7.3, y: 5.3, w: 5.4, h: 1.1, fontSize: 13, color: C.background1, align: "right" });
   s.addNotes("Duración total prevista: 13 minutos. (0:40) Presento el proyecto final: un servicio de procesamiento de lenguaje natural que, a partir de los comentarios de un video de YouTube, clasifica el sentimiento de cada comentario y estima cuántas vistas tendrá el video, con un rango de confianza. El modelo está desplegado en Hugging Face y se puede usar desde una interfaz web o como API.");
 
@@ -325,7 +325,7 @@ const chartTexto = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: "+mn-
   const anchoC = 7.4, altoC = Math.min(anchoC * ch / cw, 4.35);
   s.addShape(pres.shapes.RECTANGLE, { x: 0.6, y: 1.4, w: anchoC, h: altoC, fill: { color: H.lt1 }, line: { color: "D5D8DD", width: 0.75 }, shadow: sombra(), objectName: "Marco captura" });
   s.addImage({ path: capt, x: 0.6, y: 1.4, w: altoC * cw / ch, h: altoC, objectName: "Captura del Space", altText: "Servicio desplegado en Hugging Face Spaces" });
-  tx(s, [{ text: "Interfaz: ", options: { bold: true } }, { text: SPACE }], { x: 0.6, y: 1.5 + altoC, w: 7.4, h: 0.35, fontSize: 13, color: C.accent2 });
+  tx(s, [{ text: "Interfaz y API: ", options: { bold: true } }, { text: "https://" + SPACE, options: { hyperlink: { url: "https://" + SPACE, tooltip: "Abrir el servicio" }, color: C.accent2 } }], { x: 0.6, y: 1.5 + altoC, w: 7.4, h: 0.35, fontSize: 13, color: C.accent2 });
   tarjeta(s, 0.6, 6.0, 7.4, 0.75, "Pestañas", H.lt2);
   tx(s, "Respuesta en 2 a 3 s · Pestañas: Predicción, Video, Monitoreo, API, Acerca", { x: 0.8, y: 6.17, w: 7.0, h: 0.4, fontSize: 14, bold: true, color: C.text2 });
   tarjeta(s, 8.35, 1.4, 4.4, 3.05, "Código API", H.dk1);
@@ -359,11 +359,11 @@ const chartTexto = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: "+mn-
   tx(s, [{ text: "Ampliar a cientos de comentarios por video y a mediciones repetidas con la API de YouTube", options: { bullet: true, breakLine: true } },
     { text: "Auditar una muestra de etiquetas a mano (kappa de Cohen) y recalibrar con datos del canal", options: { bullet: true, breakLine: true } },
     { text: "Modelo multilingüe para comentarios en español y otros idiomas", options: { bullet: true } }],
-    { x: 0.6, y: 4.95, w: 7.6, h: 1.7, fontSize: 15, color: C.background1, paraSpaceAfter: 6 });
-  tx(s, [{ text: "Servicio", options: { bold: true, color: C.accent3, breakLine: true } }, { text: SPACE, options: { breakLine: true } },
-    { text: "Modelos", options: { bold: true, color: C.accent3, breakLine: true } }, { text: MODELO, options: { breakLine: true } },
-    { text: "Código", options: { bold: true, color: C.accent3, breakLine: true } }, { text: REPO }],
-    { x: 8.6, y: 4.45, w: 4.15, h: 2.3, fontSize: 12, color: C.background1, paraSpaceAfter: 2 });
+    { x: 0.6, y: 4.95, w: 6.8, h: 1.7, fontSize: 15, color: C.background1, paraSpaceAfter: 6 });
+  tx(s, [{ text: "Servicio", options: { bold: true, color: C.accent3, breakLine: true } }, { text: "https://" + SPACE, options: { breakLine: true, hyperlink: { url: "https://" + SPACE }, color: C.background1 } },
+    { text: "Modelos", options: { bold: true, color: C.accent3, breakLine: true } }, { text: "https://" + MODELO, options: { breakLine: true, hyperlink: { url: "https://" + MODELO }, color: C.background1 } },
+    { text: "Código", options: { bold: true, color: C.accent3, breakLine: true } }, { text: "https://" + REPO, options: { hyperlink: { url: "https://" + REPO }, color: C.background1 } }],
+    { x: 7.75, y: 4.45, w: 5.0, h: 2.3, fontSize: 12, color: C.background1, paraSpaceAfter: 2 });
   s.addNotes("(0:50) Para cerrar: el problema quedó resuelto con un servicio que cualquier analista usa desde el navegador o que otro sistema consume por API. El diseño es mantenible: los modelos están versionados aparte del código. Y los datos nos enseñaron que el tono casi no explica el alcance. Los siguientes pasos son más comentarios por video y mediciones en el tiempo, una auditoría manual de etiquetas y un modelo multilingüe. Gracias.");
 
   await pres.writeFile({ fileName: "Presentacion_Proyecto_Final_Gomez_Castaneda.pptx" });
